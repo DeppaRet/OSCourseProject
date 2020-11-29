@@ -233,7 +233,7 @@ namespace OSCourseProject
           {
             FileSystem.Rows[i - 75].Cells[7].Style.BackColor = Color.BlueViolet;
           }
-          FileSystem.Update();           //обновление грида
+          //FileSystem.Update();           //обновление грида
           //Thread.Sleep(5);
         }
       }
@@ -258,7 +258,7 @@ namespace OSCourseProject
           {
             FileSystem.Rows[i - 75].Cells[7].Style.BackColor = Color.LawnGreen;
           }
-          FileSystem.Update();          //обновление грида
+          //FileSystem.Update();          //обновление грида
         }
         //Thread.Sleep(5);
       }
@@ -284,7 +284,7 @@ namespace OSCourseProject
             FileSystem.Rows[i - 75].Cells[7].Style.BackColor = Color.OrangeRed;
           }
 
-          FileSystem.Update();           //обновление грида
+          //FileSystem.Update();           //обновление грида
         }
       }
     }
@@ -442,6 +442,12 @@ namespace OSCourseProject
       }
 
       IsEqual(files, addreses, visited); // поиск совпадений
+      FileSystem.Rows.Clear();
+      for (int i = 0; i < 25; i++)
+      {
+        FileSystem.Rows.Add(i, addreses[i], i + 25, addreses[i + 25], i + 50, addreses[i + 50], i + 75,
+          addreses[i + 75]);
+      }
       buildSystem();
     }
 
@@ -513,7 +519,7 @@ namespace OSCourseProject
                   if (l == equalSize - 2)
                   {
                     equalFile[l + 1] = "eof";
-                    addreses[Convert.ToInt32(equalFile[l-1])] = "eof";
+                    addreses[Convert.ToInt32(equalFile[l])] = "eof";
                     break;
                   }
                   equalFile[l+1] = Convert.ToString(freeAddress);
