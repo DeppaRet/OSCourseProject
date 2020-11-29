@@ -429,7 +429,7 @@ namespace OSCourseProject
             break;
           }
         }
-
+         
         for (int i = 1; i <= unnamedFiles; i++)
         {
           files[namedFiles - 1 + tmp] = Output.Lines[Convert.ToInt32(AmountOfFiles.Text) + i];
