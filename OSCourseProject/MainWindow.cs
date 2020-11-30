@@ -119,6 +119,7 @@ namespace OSCourseProject
       catch (System.FormatException)
       {
         MessageBox.Show("Укажите количество файлов!");
+        Analyse.Enabled = false;
         return;
       }
 
@@ -211,6 +212,7 @@ namespace OSCourseProject
       }
       catch (Exception ex)
       {
+        Analyse.Enabled = false;
         MessageBox.Show(ex.Message);
       }
     }
