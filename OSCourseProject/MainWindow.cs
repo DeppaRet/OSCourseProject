@@ -62,6 +62,7 @@ namespace OSCourseProject
 
     private void Export_Click(object sender, EventArgs e)
     {
+      try
       {
         Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
         Workbook ExcelWorkBook;
@@ -69,7 +70,7 @@ namespace OSCourseProject
         //Книга.
         ExcelWorkBook = ExcelApp.Workbooks.Add(System.Reflection.Missing.Value);
         //Таблица.
-        ExcelWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ExcelWorkBook.Worksheets.get_Item(1);
+        ExcelWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet) ExcelWorkBook.Worksheets.get_Item(1);
 
         for (int i = 0; i < FileSystem.Rows.Count; i++)
         {
@@ -78,9 +79,14 @@ namespace OSCourseProject
             ExcelApp.Cells[i + 1, j + 1] = FileSystem.Rows[i].Cells[j].Value;
           }
         }
+
         //Вызываем нашу созданную эксельку.
         ExcelApp.Visible = true;
         ExcelApp.UserControl = true;
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Что-то пошло не так.\nВозможно у вас нет Excel");
       }
     }
 
