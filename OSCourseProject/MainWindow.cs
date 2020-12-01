@@ -241,7 +241,8 @@ namespace OSCourseProject
           {
             FileSystem.Rows[i - 75].Cells[7].Style.BackColor = Color.BlueViolet;
           }
-          //FileSystem.Update();           //обновление грида
+          if (anime.Checked == true)
+            FileSystem.Update();           //обновление грида
           //Thread.Sleep(5);
         }
       }
@@ -266,7 +267,8 @@ namespace OSCourseProject
           {
             FileSystem.Rows[i - 75].Cells[7].Style.BackColor = Color.LawnGreen;
           }
-          //FileSystem.Update();          //обновление грида
+          if (anime.Checked == true)
+            FileSystem.Update();          //обновление грида
         }
         //Thread.Sleep(5);
       }
@@ -291,12 +293,14 @@ namespace OSCourseProject
           {
             FileSystem.Rows[i - 75].Cells[7].Style.BackColor = Color.OrangeRed;
           }
-
-          //FileSystem.Update();           //обновление грида
+          if (anime.Checked == true)
+            FileSystem.Update();           //обновление грида
         }
       }
     }
-    
+
+
+  
     private void open_Click(object sender, EventArgs e) //игнорировать неправильный ввод
     {
       try
@@ -474,7 +478,7 @@ namespace OSCourseProject
         {
           if (j < 9)
             E[j] = Convert.ToString(i);
-          while ((addreses[temp] != "eof") && visited[temp] == false)
+          while (addreses[temp] != "eof")
           {
             E[j] = E[j] + ' ' + addreses[temp];
             visited[temp] = true;

@@ -101,6 +101,7 @@
       this.Controls.Add(this.Close);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "About";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "About";
       this.Load += new System.EventHandler(this.About_Load);
       this.ResumeLayout(false);

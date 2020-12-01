@@ -77,6 +77,7 @@
       this.close = new Guna.UI.WinForms.GunaCircleButton();
       this.About = new Guna.UI.WinForms.GunaCircleButton();
       this.Export = new System.Windows.Forms.Button();
+      this.anime = new System.Windows.Forms.CheckBox();
       ((System.ComponentModel.ISupportInitialize)(this.FileSystem)).BeginInit();
       this.SuspendLayout();
       // 
@@ -507,6 +508,16 @@
       this.Export.UseVisualStyleBackColor = true;
       this.Export.Click += new System.EventHandler(this.Export_Click);
       // 
+      // anime
+      // 
+      this.anime.AutoSize = true;
+      this.anime.Location = new System.Drawing.Point(495, 34);
+      this.anime.Name = "anime";
+      this.anime.Size = new System.Drawing.Size(154, 17);
+      this.anime.TabIndex = 39;
+      this.anime.Text = "Отрисовать с анимацией";
+      this.anime.UseVisualStyleBackColor = true;
+      // 
       // MainWindow
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,6 +525,7 @@
       this.BackColor = System.Drawing.Color.NavajoWhite;
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
       this.ClientSize = new System.Drawing.Size(906, 564);
+      this.Controls.Add(this.anime);
       this.Controls.Add(this.Export);
       this.Controls.Add(this.About);
       this.Controls.Add(this.close);
@@ -553,6 +565,7 @@
       this.ForeColor = System.Drawing.SystemColors.ControlText;
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "MainWindow";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "MainWindow";
       this.TransparencyKey = System.Drawing.Color.Maroon;
       this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -610,6 +623,7 @@
     private Guna.UI.WinForms.GunaCircleButton About;
     private Guna.UI.WinForms.GunaCircleButton close;
     private System.Windows.Forms.Button Export;
+    private System.Windows.Forms.CheckBox anime;
   }
 }
 
