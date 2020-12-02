@@ -424,7 +424,7 @@ namespace OSCourseProject
         named[o] = false;
       }
 
-      E = NotEmpty(visited, addreses, named); //поиск неименованных данных
+      E = Calc.NotEmpty(visited, addreses, named); //поиск неименованных данных
 
       if (E[0] != "Empty")
       {
@@ -463,39 +463,7 @@ namespace OSCourseProject
       buildSystem();
     }
 
-    public static string[] NotEmpty(bool[] visited, string[] addreses, bool[] named)
-    {
-      int i = 0, j = 0;
-      string[] E = new string[10];
-      for (int k = 0; k < 10; k++)
-      {
-        E[k] = "Empty";
-      }
-      do
-      {
-        var temp = i;
-        if ((visited[i] == false) && (addreses[i] != "0"))
-        {
-          if (j < 9)
-            E[j] = Convert.ToString(i);
-          while (addreses[temp] != "eof")
-          {
-            E[j] = E[j] + ' ' + addreses[temp];
-            visited[temp] = true;
-            temp = Convert.ToInt32(addreses[temp]);
-          }
-          if (addreses[temp] == "eof")
-          {
-            E[j] = E[j] + ' ' + "eof";
-            visited[temp] = true;
-            j++;
-          }
-        }
-        i++;
-      }
-      while (i < 100);
-      return E;
-    }
+   
 
     public void IsEqual(string[] files, string[] addreses, bool[] visited)
     {
